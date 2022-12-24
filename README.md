@@ -69,8 +69,7 @@
 
 Если приложение использует библиотеку `react-router-dom` для маршрутизации,
 необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки
-обязателен.
+`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
 
 ```jsx
 <BrowserRouter basename="/your_repo_name">
@@ -89,3 +88,11 @@
 3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
    отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
    скрипта будет указано в чем проблема.
+
+API ключ (v3 auth) 3cfddd5e97fd8d1a3fdf959358de6593
+
+Приклад API-запиту
+https://api.themoviedb.org/3/movie/550?api_key=3cfddd5e97fd8d1a3fdf959358de6593
+
+Токен доступу для читання API (v4 auth)
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzY2ZkZGQ1ZTk3ZmQ4ZDFhM2ZkZjk1OTM1OGRlNjU5MyIsInN1YiI6IjYzYTcwMjEwMzg5ZGExMDA4NzY0OGQxNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pIM8fhdaIsn-b3V46zU7oeA1l8Fx7g10G0-nlOGGPPk
