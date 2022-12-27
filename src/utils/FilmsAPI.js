@@ -12,9 +12,13 @@ const getTrendingMovies = async () => {
   return response.data;
 };
 
-// const getMovieByID = async id => {};
+const getMovieByID = async id => {
+  const response = await axios.get(`/movie/${id}`);
+  console.log(response.data);
+  return response.data;
+};
 
-export { getTrendingMovies };
+export { getTrendingMovies, getMovieByID };
 
 // adult: false;
 // backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg';

@@ -19,7 +19,7 @@ export const Home = () => {
           trends.map(({ id, title }) => {
             return (
               <li key={id}>
-                <NavLink>{title}</NavLink>
+                <NavLink to={`/movies/${id}`}>{title}</NavLink>
               </li>
             );
           })}
