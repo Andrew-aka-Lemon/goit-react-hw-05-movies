@@ -5,6 +5,8 @@ import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
 import { MovieDetails } from 'pages/MovieDetails';
 import { Cast } from 'components/Cast';
+import { Reviews } from 'components/Reviews';
+
 import { Main, Header, NavLinkItem } from './AppStyled';
 
 export const App = () => {
@@ -20,7 +22,7 @@ export const App = () => {
           <Route path="/movies" element={<Movies />} />
           <Route path="/movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />}></Route>
-            <Route path="reviews"></Route>
+            <Route path="reviews" element={<Reviews />}></Route>
           </Route>
         </Routes>
       </Main>

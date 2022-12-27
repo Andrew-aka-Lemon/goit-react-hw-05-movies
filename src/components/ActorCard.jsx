@@ -25,7 +25,5 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* justify-content: center; */
   width: 250px;
-  /* flex-basis: (100% / 6) - 10px; */
 `;
