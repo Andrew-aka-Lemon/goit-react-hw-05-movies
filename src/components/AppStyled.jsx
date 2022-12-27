@@ -20,17 +20,16 @@ const NavLinkItem = styled(NavLink)`
 
 const Header = styled.div`
   height: 100px;
-  /* position: absolute; */
   display: flex;
   justify-content: left;
   align-items: center;
   font-size: 40px;
   color: #010101;
+  box-shadow: 0px 10px 5px 0px rgba(140, 140, 140, 1);
 `;
 
 const Main = styled.main`
-  padding-top: 20px;
-  padding-left: 20px;
+  margin: 20px;
 `;
 
 export { Main, Header, NavLinkItem };

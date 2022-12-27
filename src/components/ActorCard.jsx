@@ -1,0 +1,31 @@
+import styled from 'styled-components';
+
+import placeholder from 'images/ProfilePlaceholder.jpg';
+
+export const ActorCard = ({ name, character, photo }) => {
+  const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w200/';
+
+  let imgSource = placeholder;
+
+  if (photo !== null) {
+    imgSource = `${BASE_IMG_URL}${photo}`;
+  }
+
+  return (
+    <Card>
+      <img src={imgSource} alt={`Actor ${name}`} />
+      <p>{name}</p>
+      <p>{character}</p>
+    </Card>
+  );
+};
+
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* justify-content: center; */
+  width: 250px;
+  /* flex-basis: (100% / 6) - 10px; */
+`;
