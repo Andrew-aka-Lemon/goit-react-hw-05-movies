@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { getMovieByQuerySearch } from 'utils/FilmsAPI';
 
 export const Movies = () => {
   const [movieList, setMovieList] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const movieToSearch = searchParams.get('movie');
+  const location = useLocation();
 
   useEffect(() => {
     if (movieToSearch === null) {
@@ -36,7 +37,9 @@ export const Movies = () => {
         <ul>
           {movieList.map(({ id, original_title }) => (
             <li key={id}>
-              <NavLink to={`/movies/${id}`}>{original_title}</NavLink>
+              <NavLink to={`/movies/${id}`} state={location}>
+                {original_title}{' '}
+              </NavLink>
             </li>
           ))}
         </ul>

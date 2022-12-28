@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, NavLink, Outlet } from 'react-router-dom';
+import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { getMovieByID } from 'utils/FilmsAPI';
 import { getGenres } from 'utils/genresMashine';
 import {
@@ -12,6 +12,7 @@ import {
 export const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
+  const location = useLocation();
 
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w300/';
 
@@ -26,7 +27,7 @@ export const MovieDetails = () => {
   const genresString = getGenres(genres);
   return (
     <>
-      <NavLink>{`<---`}Back to movielist</NavLink>
+      <NavLink to={location.state}>{`<---`}Back to movielist</NavLink>
       <MovieInfo>
         <img src={`${BASE_IMG_URL}${poster_path}`} alt={title} />
         <MovieTextInfo>
