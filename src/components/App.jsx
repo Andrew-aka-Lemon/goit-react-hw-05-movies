@@ -3,9 +3,9 @@ import { SharedLayout } from 'pages/SharedLayout';
 
 import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
-import { MovieDetails } from 'pages/MovieDetails';
-import { Cast } from 'components/Cast';
-import { Reviews } from 'components/Reviews';
+import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
+import { Cast } from 'components/Cast/Cast';
+import { Reviews } from 'components/Reviews/Reviews';
 
 export const App = () => {
   return (

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { getMovieCreditsByID } from 'utils/FilmsAPI';
-import { ActorCard } from 'components/ActorCard';
+import { ActorCard } from 'components/Cast/ActorCard';
 
 export const Cast = () => {
   const [cast, setCast] = useState([]);
