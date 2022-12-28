@@ -7,16 +7,17 @@ import { Review } from './Review';
 import { getMovieReviewsByID } from 'utils/FilmsAPI';
 
 export const Reviews = () => {
-  const [reviews, setReviews] = useState(null);
+  const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
     getMovieReviewsByID(movieId).then(rev => setReviews(rev));
   }, [movieId]);
 
-  if (reviews === null) {
-    return;
+  if (reviews.length === 0) {
+    return <div>There is no reviews on this film</div>;
   }
+
   return (
     <div>
       {reviews.map(

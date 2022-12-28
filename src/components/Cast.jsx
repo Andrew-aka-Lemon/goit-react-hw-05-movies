@@ -6,14 +6,14 @@ import { getMovieCreditsByID } from 'utils/FilmsAPI';
 import { ActorCard } from 'components/ActorCard';
 
 export const Cast = () => {
-  const [cast, setCast] = useState(null);
+  const [cast, setCast] = useState([]);
   const { movieId } = useParams();
   useEffect(() => {
     getMovieCreditsByID(movieId).then(cast => setCast(cast));
   }, [movieId]);
 
-  if (cast === null) {
-    return;
+  if (cast.length === 0) {
+    return <div>We have no information about cast in this movie</div>;
   }
 
   return (
