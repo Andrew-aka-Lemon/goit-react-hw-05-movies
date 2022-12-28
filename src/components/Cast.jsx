@@ -12,20 +12,20 @@ export const Cast = () => {
     getMovieCreditsByID(movieId).then(cast => setCast(cast));
   }, [movieId]);
 
-  if (cast.length === 0) {
-    return <div>We have no information about cast in this movie</div>;
-  }
-
   return (
     <CastGallery>
-      {cast.map(({ credit_id, name, character, profile_path }) => (
-        <ActorCard
-          key={credit_id}
-          name={name}
-          character={character}
-          photo={profile_path}
-        />
-      ))}
+      {cast.length > 0 ? (
+        cast.map(({ credit_id, name, character, profile_path }) => (
+          <ActorCard
+            key={credit_id}
+            name={name}
+            character={character}
+            photo={profile_path}
+          />
+        ))
+      ) : (
+        <div>We have no information about cast in this movie</div>
+      )}
     </CastGallery>
   );
 };
