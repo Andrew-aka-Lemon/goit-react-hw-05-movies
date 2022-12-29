@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { getTrendingMovies } from 'utils/FilmsAPI';
 
-export const Home = () => {
+const Home = () => {
   const [trends, setTrends] = useState([]);
   const location = useLocation();
 
@@ -30,3 +29,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

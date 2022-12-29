@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 import { getMovieByQuerySearch } from 'utils/FilmsAPI';
 
-export const Movies = () => {
+const Movies = () => {
   const [movieList, setMovieList] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const movieToSearch = searchParams.get('movie');
@@ -47,3 +47,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default Movies;

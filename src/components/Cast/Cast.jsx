@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { getMovieCreditsByID } from 'utils/FilmsAPI';
 import { ActorCard } from 'components/Cast/ActorCard';
 
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
   useEffect(() => {
@@ -29,6 +29,8 @@ export const Cast = () => {
     </CastGallery>
   );
 };
+
+export default Cast;
 
 const CastGallery = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { getMovieByID } from 'utils/FilmsAPI';
 import { getGenres } from 'utils/genresMashine';
@@ -9,7 +9,7 @@ import {
   MovieTextInfo,
 } from 'pages/MovieDetails/MovieDetailStyled';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
   const location = useLocation();
@@ -48,7 +48,11 @@ export const MovieDetails = () => {
           <NavLinkItem to="reviews">Reviews</NavLinkItem>
         </h3>
       </AdditionalMovieInfo>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
+
+export default MovieDetails;
