@@ -27,7 +27,7 @@ const MovieDetails = () => {
   const genresString = getGenres(genres);
   return (
     <>
-      <NavLink to={location.state || '/'}>{`<---`}Back to movielist</NavLink>
+      <NavLink to={location.state ?? '/'}>{`<---`}Back to movielist</NavLink>
       <MovieInfo>
         <img src={`${BASE_IMG_URL}${poster_path}`} alt={title} />
         <MovieTextInfo>

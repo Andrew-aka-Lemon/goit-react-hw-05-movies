@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Review = ({ author, text, postTime, link, nickname }) => {
   const datePost = new Date(postTime).toLocaleDateString();
   return (
@@ -11,4 +13,12 @@ export const Review = ({ author, text, postTime, link, nickname }) => {
       <p>{text}</p>
     </div>
   );
+};
+
+Review.propTypes = {
+  author: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  nickname: PropTypes.string,
+  postTime: PropTypes.string,
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import placeholder from 'images/ProfilePlaceholder.jpg';
 
@@ -18,6 +19,12 @@ export const ActorCard = ({ name, character, photo }) => {
       <p>{character}</p>
     </Card>
   );
+};
+
+ActorCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  character: PropTypes.string,
+  photo: PropTypes.string,
 };
 
 const Card = styled.div`
